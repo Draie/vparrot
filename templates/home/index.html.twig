@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil - V.Parrot!{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/Home.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block body %}
+
+{% include 'navbar.html.twig' %}
+
+     <div class="herobanner">
+          <h1>  la qualité automobile à votre service !</h1>
+</div>
+     <content>
+   <h1 class="Heading1"> nos services de réparation automobiles</h1>
+    <div class="mainContent">
+     {% include 'home/serviceCard.html.twig' %}
+     </div>
+     </content>
+
+{% endblock %}
+

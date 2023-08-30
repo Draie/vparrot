@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    
+    
+  
+}
+
+.formContainerLeft{
+    display: grid;
+    grid-template-rows:  64vh 1fr;
+    background-color: #F14413;
+   
+  
+}
+.heroBanner h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: #FEFFFE;
+    height: 100%;
+    font-weight: lighter;
+   
+    
+  }
+  .heroBanner{
+      align-self: center;
+      justify-self: center;
+  
+  }
+  .logo {
+      display: flex;
+     flex: end;
+     justify-self: end;
+  }
+  
+  
+
+
+.formContainerRight{
+
+    display: grid;
+    grid-template-rows: 1fr 75vh;
+}
+.formHeading{
+    display: flex;
+    justify-self: start;
+    align-self: flex-end;
+   
+    background-color: #FEFFFE;
+}
+.formHeading h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: #020409;
+    height: 100%;
+    margin-bottom: 2rem;
+    margin-left:2rem;
+    font-weight: lighter;
+}
+
+
+.formBody{
+    background-color: #FEFFFE;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    max-height: 80%;
+    min-height:80% ;
+    min-width:80% ;
+    justify-self: center;
+
+}
+
+.formBody input{
+    border-color: #D2D5D5;
+    color: #858686;
+    border-width: 1px;
+    border-style: solid;
+    width: 400px;
+    height: 30px;
+    margin: 3rem;
+    align-self: center;
+    font-family: 'Roboto';
+    padding-left: 10px;
+}
+.formBody button{
+    border-style: solid;
+    border-color: #F14413;
+    background-color: #F14413;
+    color: #FEFFFE;
+    font-family: 'Roboto';
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+    align-self: center;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 6rem;
+
+}
+.formBody button:hover{
+    background-color: #f07756;
+    border-color: #f07756;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    body {
+      display: flex;
+      flex-direction: column;
+      font-size: larger;
+    }
+
+    /* gestion du hero banner */
+    .formContainerLeft{
+        display: grid;
+        grid-template-rows:  5vh 1fr;
+        background-color: #F14413;
+       
+      
+    }
+    .heroBanner h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: #FEFFFE;
+    height: 100%;
+    font-weight: lighter;
+    margin-top: 5em;
+   
+    
+  }
+  .formContainerRight{
+
+    margin-top: 5em;
+}
+
+}

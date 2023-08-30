@@ -1,0 +1,23 @@
+  
+  {% block stylesheets %}
+            <link href="{{ asset('css/serviceCard.css') }}" rel="stylesheet" />
+        {% endblock %}
+  
+
+   
+        {% for service in service %}
+    
+            <div class="cardContainer">
+         
+                <h1>{{service.title}}</h1>
+                <div class="descriptionBox">
+                <div class="detail"><p>Détail:</p></div>
+                <p>{{service.description}}</p>
+            
+            <div class="btn">
+                <button >Envoyer une demande</button>
+            </div>
+            </div>
+            </div>
+             
+        {% endfor %}

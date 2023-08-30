@@ -1,0 +1,59 @@
+
+.cardContainer{
+   display: grid;
+   grid-row: 20px 1fr;
+   padding: 0px;
+   margin: 0px;
+    background-color: #EFF0E4;
+    max-width: 500px;
+    height: 300px;
+
+ }
+
+ .cardContainer h1{
+    font-size: 20px;
+    width:500px ;
+    font-family: 'Bebas Neue','sans-serif';
+    font-weight: lighter;
+    text-align: center;
+    align-self: center;
+ }
+ 
+ .Heading1{
+    font-size: 40px;
+ }
+ .descriptionBox{
+   padding-top:1rem;
+   max-width: 100%;
+   height: 90%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 10px;
+   font-family: 'Roboto', 'sans-serif';
+   font-weight: bolder;
+   padding-left: 30px;
+ }
+ 
+
+ .descriptionBox .detail p{
+   font-size: 15px;
+ }
+
+ .cardContainer .descriptionBox .btn {
+   max-width: max-content;
+   padding-left:15rem;
+ }
+
+ .cardContainer .descriptionBox .btn button{
+   margin-top:4rem;
+   border:none;
+   padding:10px;
+   background-color: #858686;
+   color:white;
+
+ }
+ .cardContainer .descriptionBox .btn button:hover{
+   background-color: #FEFFFE;
+   color:  #020409;
+   font-weight: 200;
+ }

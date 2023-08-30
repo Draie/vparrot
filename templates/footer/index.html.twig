@@ -1,0 +1,33 @@
+
+
+{% block footer %}
+{% block stylesheets %}
+            <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+        {% endblock %}
+<footer>
+<div class="footerCrud">
+    <h1> Horaire </h1>
+    {% for horairedujour in horairedujour %}
+    <h2>     {{ horairedujour.Jour }}</h2>
+
+      <div class="heureContainer">
+   <p class="heure">De {{ horairedujour.morningStartTime ? horairedujour.morningStartTime|date('H:i') : '' }} &nbsp; à &nbsp;</p>
+    <p class="heure"> {{ horairedujour.morningEndTime ? horairedujour.morningEndTime|date('H:i') : '' }} &nbsp; </p>
+    <p class="heure" > et de {{ horairedujour.afterStartTime ? horairedujour.afterStartTime|date('H:i') : '' }}</p>
+    <p class="heure"> &nbsp; à &nbsp; {{ horairedujour.afterEndTime ? horairedujour.afterEndTime|date('H:i') : '' }}</p>
+   </div>
+     {% endfor %}
+
+    
+</div>
+<div class="links">
+        <h1> Liens </h1>
+        <ul class="linkContainer">
+        <a href="/service"> Service</a>
+        <a href="/"> Nous contactez </a>
+        <a href="/"> Accueil</a>
+        <a href="/"> A propos</a>
+        </ul>
+    </div>
+</footer>
+ {% endblock %}
