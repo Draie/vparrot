@@ -1,0 +1,11 @@
+.admin_side_bar{
+    background-color: rgb(212, 0, 255);
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+}
+
+.admin_side_bar a {
+
+}
+

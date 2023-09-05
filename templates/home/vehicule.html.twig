@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos vehicules{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/vehicule.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block body %}
+
+{% include 'navbar.html.twig' %}
+
+
+     <content>
+   <h1 class="Heading1"> nos vehicules </h1>
+    <div class="mainContent">
+     {% include 'home/autoCard.html.twig' %}
+     </div>
+     </content>
+
+{% endblock %}
+
+
+        
+

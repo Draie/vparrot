@@ -1,26 +1,28 @@
-*{
-    padding: 0px;
-    margin: 0px;
-   
+
+
+body{
+    grid-template-rows: 10vh 90vh;
+    height: max-content;
+    width: 98vw;
+    
 }
 
+.Heading1 h1{
+    font-family: 'Bebas Neue','sans-serif';
+    font-weight: lighter;
+    font-size: 40px;
+    padding-left: 20px;
+    margin:10px;
+    padding-top: 30px;
+}
 
-
- 
- 
- 
- 
-
-
-
-/*.autoBody{
+.autoBody{
     display: flex;
     justify-content: center;
     align-content: center;
     width:95vw ;
     height: max-content;
 }
-*/
 .autoCard{
 
     width: 400px;
@@ -31,14 +33,16 @@
     justify-self: center;
     align-items: center;
     justify-self: center;
-    gap:1.7rem;
+    gap:2rem;
     border-radius:10px;
     padding-top:1.5rem;
-    padding-bottom:80px;
+    padding-bottom:1.5rem;
     box-shadow: 0px 2px 124px -17px rgba(0,0,0,0.07);
     transition-duration: 1s;
-   
 }
+
+
+
 
 .autoCard:hover{
     box-shadow: 0px 2px 87px 15px rgba(179,179,179,0.45);
@@ -62,7 +66,7 @@
 .price{
     font-size: 20px;
     font-weight: 900;
-    background-color: #f07552;
+    background-color: #F14413;
     color: white;
     padding: 5px;
     text-align: center;
@@ -74,8 +78,7 @@
 }
 
 .autoCard img{
-    min-width: 300px;
-    min-height: 290PX;
+
     max-width: 300px;
     max-height: 290px;
     
@@ -83,8 +86,8 @@
 }
 
 .btn a{
+
     background-color: #F14413;
-    
     color: white;
     text-decoration: none;
     font-family: 'Roboto','sans-serif';
@@ -93,10 +96,5 @@
     padding: 5px;
     border-radius: 5px;
     transition-duration: 0.7s;
-   
-}
 
-
-.btn a:hover {
-    background-color: #992708f8;
 }

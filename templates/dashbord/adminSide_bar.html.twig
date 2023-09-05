@@ -1,0 +1,35 @@
+{% block stylesheets %}
+            <link href="{{ asset('css/admin_side_bar.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+{% block navbar %}
+ <div class="admin_side_bar">
+
+ <a href="/admin">
+<i class="fa-solid fa-house" style="color: #ffffff;"></i>
+</a>
+
+ <a href="/register">
+ <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+</a>
+
+ <a href="/imggest/auto">
+<i class="fa-solid fa-car" style="color: #ffffff;"></i>
+</a>
+
+
+ <a href="/horaire">
+<i class="fa-solid fa-clock" style="color: #ffffff;"></i>
+</a>
+
+
+ <a href="/">
+<i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+</a>
+
+
+
+</div>
+
+
+{% endblock %}

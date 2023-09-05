@@ -1,0 +1,9 @@
+    {% block stylesheets %}
+            <link href="{{ asset('css/navlinks.css') }}" rel="stylesheet" />
+        {% endblock %}
+    
+    <div class="navlinks">
+  
+         <a href="{{ path('app_image_gest_index') }}">Retour à la liste</a>
+         <a href="{{ path('app_image_gest_edit', {'id': image.id}) }}">Modifier</a>
+        </div>

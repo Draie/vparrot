@@ -19,9 +19,11 @@
             <tr>
                 <td>{{ image.id }}</td>
                 <td>{{ image.nom }}</td>
+                <td>{{ image.price }}</td>
+                <td>{{ image.kms }}</td>
                 <td>{{ image.createdAt ? image.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_image_gest_show', {'id': image.id}) }}">show</a>
+                    <a href="{{ path('app_image_gest_show', {'id': image.id}) }}">Voir en détail</a>
                     <a href="{{ path('app_image_gest_edit', {'id': image.id}) }}">edit</a>
                 </td>
             </tr>

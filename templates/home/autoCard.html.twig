@@ -1,0 +1,32 @@
+ 
+ 
+  {% block stylesheets %}
+            <link href="{{ asset('css/auto.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/navlinks.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+                {% for image in image %}
+                            <div class="autoCard">
+                            <div class="img-box">
+                        <td><img class="img-thumbnail" src="{{ asset('uploads/photo/' ~ image.photo) }}" alt="voiture photo"></td>
+                            </div>
+                        
+                            <div class="detailBox">
+                            <h3 class="autoName"> Modèle : {{ image.nom }}</h3>
+                            <h3 class="price"> A partir de : {{ image.price }} €</h3>
+                            <h4 class="kms">Kilométrage : {{ image.kms }} kms</h4>
+                            <h4 class="date">Date de mise en circulation  : {{ image.createdAt ? image.createdAt|date('Y') : '' }}</h4>
+                            
+                        </div>
+
+                        <div class="btn">
+                            <a href="{{ path('app_image_gest_autoShow', {'id': image.id}) }}">En savoir plus</a>
+                            </div>
+                          
+                            
+                            </div>
+                {% endfor %}
+                
+       
+ 
+

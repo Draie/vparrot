@@ -18,6 +18,11 @@ class ImageTypeEdit extends AbstractType
         $builder
             ->add('nom')
             ->add('created_at')
+            ->add('price')
+            ->add('kms')
+            ->add('equipement')
+            ->add('Nbplaces')
+            ->add('carburant')
         /*    ->add('photo', FileType::class, [
                 'label' => 'Photo (image file)',
 
