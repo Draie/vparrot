@@ -15,7 +15,7 @@ class DashbordController extends AbstractController
     {
         return $this->render('dashbord/index.html.twig', [
             'controller_name' => 'DashbordController',
-            'image'=>$image,
+            'image'=>$image->count([$image]),
             'horairedujour'=>$horairedujour
         ]);
     }

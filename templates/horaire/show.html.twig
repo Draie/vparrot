@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Horaire{% endblock %}
+
+{% block body %}
+    <h1>Horaire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ horaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Jour</th>
+                <td>{{ horaire.Jour }}</td>
+            </tr>
+            <tr>
+                <th>MorningStartTime</th>
+                <td>{{ horaire.morningStartTime ? horaire.morningStartTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>MorningEndTime</th>
+                <td>{{ horaire.morningEndTime ? horaire.morningEndTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AfterStartTime</th>
+                <td>{{ horaire.afterStartTime ? horaire.afterStartTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AfterEndTime</th>
+                <td>{{ horaire.afterEndTime ? horaire.afterEndTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_horaire_index') }}">back to list</a>
+
+    <a href="{{ path('app_horaire_edit', {'id': horaire.id}) }}">edit</a>
+
+    {{ include('horaire/_delete_form.html.twig') }}
+{% endblock %}
