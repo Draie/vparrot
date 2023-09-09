@@ -1,39 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Image index{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/auto_index.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Gestion véhicule{% endblock %}
 
 {% block body %}
-    <h1>Image index</h1>
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Created_at</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for image in images %}
-            <tr>
-                <td>{{ image.id }}</td>
-                <td>{{ image.nom }}</td>
-                <td>{{ image.price }}</td>
-                <td>{{ image.kms }}</td>
-                <td>{{ image.createdAt ? image.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_image_gest_show', {'id': image.id}) }}">Voir en détail</a>
-                    <a href="{{ path('app_image_gest_edit', {'id': image.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        </div>
+   
+ 
 
-    <a href="{{ path('app_image_gest_new') }}">Create new</a>
+<div class="autoIndex_content">
+<!-- HEADER COUNTER AND BUTTON CREATE NEW AUTO PART -->
+   <div class="autoIndex_header">
+   
+        
+        <div class="autoCounter">
+                            <div class"count">
+                            {{ count }}
+                            </div>  
+                             <h2>Vehicule en vente</h2>
+        </div>
+        <a href="{{ path('app_image_gest_new') }}">Ajouter un véhicule </a>
+  
+    </div>
+<!-- /////////////////////////////////////////////////////////// -->
+
+     
+
+<!-- ///////////////INFO AUTO PART ///////////////////////////////////////// -->
+            <div class="autoInfo_container">
+                    <h1>Offre récentes </h1>
+                            
+
+                        <table class="autoInfo_table">
+                            <thead>
+                                <tr  class="headerTable_tittle">
+                                    <th>MODEL</th>
+                                    <th class="range">DEPUIS LE</th>
+                                    <th class="range">  KILOMETRAGE</th>
+                                    <th class="range">PRIX</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for image in images %}
+                                <tr class="column-range">
+                                    <td class="name_range">{{ image.nom }}</td>
+                                    <td class="range">{{ image.createdAt ? image.createdAt|date('Y-m-d ') : '' }}</td>
+                                    <td class="range">{{ image.kms }}</td>
+                                    <td class="range">{{ image.price }} €</td>
+                                
+                            
+                                    <td class="btn">
+                                        <a href="{{ path('app_image_gest_show', {'id': image.id}) }}">Voir en détail</a>
+                                        <a href="{{ path('app_image_gest_edit', {'id': image.id}) }}">Editer</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="5">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+            </div>
+
+
+       
+</div>
+<!-- /////////////////////////////////////////////////////////// -->
+{% endblock %}
+
+{% block footer%}
 {% endblock %}

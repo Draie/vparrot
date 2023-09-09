@@ -1,0 +1,43 @@
+
+/*GLOBALE STYLE*/
+body {
+    font-family: 'Bebas Neue', 'sans-serif';
+    display:grid;
+    grid-template-columns: 1fr 2fr 4fr;
+    gap: 50px;
+   
+  
+}
+
+
+
+/*COMPTEUR NOMBRE DE VEHICULE EN LIGNE*/
+
+.autoCounter{
+    display: flex;
+    background-color: #753333;
+    width: 300px;
+    height: 150px;
+    color:#FFFF;
+    border-radius: 30px;
+    font-size:40px ;
+    justify-self: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.autoCounter h2{
+   font-size: 32px;
+}
+
+
+/*HORAIRE SETTING*/
+
+
+
+
+
+
+

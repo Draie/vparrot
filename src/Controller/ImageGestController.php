@@ -22,10 +22,15 @@ class ImageGestController extends AbstractController
 {
     #[Route('/', name: 'app_image_gest_index', methods: ['GET'])]
     public function index(ImageRepository $imageRepository, HoraireRepository $horaire): Response
+  
     {
-        return $this->render('image_gest/index.html.twig', [
-            'images' => $imageRepository->findAll(),
-            'horairedujour'=>$horaire->findAll()
+        $imageRepository= $imageRepository->findAll();
+        $count=count($imageRepository);
+          return $this->render('image_gest/index.html.twig', [
+            'images' => $imageRepository,
+            'horairedujour'=>$horaire->findAll(),
+            'count'=>$count,
+
         ]);
     }
 
