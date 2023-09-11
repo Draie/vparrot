@@ -7,22 +7,42 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
 class ImageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('created_at')
-            ->add('price')
+            ->add('nom',TextType::class, [
+                'required'   => true,
+                'label' => 'Modèle'
+            ])
+            ->add('created_at', DateType::class, [
+                'widget' => 'choice',
+                'label' => 'Date de mise en circulation',
+                'input'  => 'datetime_immutable'
+            
+            ])
+            ->add('price', MoneyType::class, [
+                'divisor' => 100,
+                'label'=>'Prix'
+            ])
             ->add('kms')
-            ->add('equipement')
+            ->add('equipement',TextareaType::class, [
+                'required'   => true,
+                'label' => 'Equipement'
+            ])
             ->add('Nbplaces')
-            ->add('carburant')
+            ->add('carburant',TextType::class,[
+                'required'=>true,
+            ] )
             ->add('photo', FileType::class, [
                 'label' => 'Image de couverture (image file)',
 

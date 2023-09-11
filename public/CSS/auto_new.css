@@ -1,0 +1,122 @@
+/* GLOBALE STYELE*/
+
+body{
+    width: 98.89vw;
+    height: 99.5vw;
+  background-color: #F14413;
+  
+}
+*{
+    padding: 0px;
+  margin:0px;
+}
+
+.mainContent{
+  background-color: white;
+  display: flex;
+  gap: 2rem;
+
+}
+
+.mainContent h1{  
+   font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #020409;
+  margin-left: 8rem;
+  font-weight: lighter;
+}
+
+/* //////////////////////////////////////////////////////*/
+
+/* FORM PART STYLE*/
+.formContent{
+    width: 98.9vw;
+    height: 100vh;
+
+    justify-content: center;
+
+    margin-top: 5rem;
+}
+.formContent .formDetails 
+{
+  display: flex;
+}
+
+.form{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction:column;
+  margin-left: 40vw;
+  max-width: 450px;
+
+}
+.form label{
+  font-size: larger;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+
+
+}
+.form div {
+  flex: start;
+  min-width: 300px;
+  max-width: 350px;
+}
+.form input {
+  border: 1px solid rgba(140,140,140,0.89);
+  margin-left: 10px;
+  height: 20px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  color: rgba(140,140,140,0.89);
+
+}
+
+.formContent a{
+  margin-right: 2rem;
+}
+
+/* //////////////////////////////////////////////// */
+
+.form button {
+  background-color: #F14413;
+    
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 800 ;
+  align-self: center;
+  padding: 5px;
+  transition-duration: 0.7s;
+  border:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 30px;
+
+}
+.btn a{
+  background-color: #F14413;
+    
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 800 ;
+  align-self: center;
+  padding: 5px;
+position: absolute;
+top:100px;
+right: 100px;
+  transition-duration: 0.7s;
+}
+
+.btn a:hover{
+  
+  background-color: #992708f8;
+
+}
+
+.form button:hover {
+  background-color: #992708f8;
+}

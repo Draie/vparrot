@@ -1,11 +1,29 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}New Image{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/auto_new.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Nouveaux véhicule véhicule{% endblock %}
 
 {% block body %}
-    <h1>Create new Image</h1>
 
-    {{ include('image_gest/_form.html.twig') }}
+    <div class="mainContent">
+        {{ include('dashbord/adminSide_bar.html.twig') }}
+        <div class="formContent">
+                <h1>Ajouter un nouveaux véhicules</h1>
+                <div class="formDetails">
+              <div class="form">
+                {{ include('image_gest/_form.html.twig') }}
+               </div>
+            <div class="btn">
+                  <a href="{{ path('app_image_gest_index') }}">Retour à la liste</a>
+                  </div>
+            </div>
+            </div>
+            
+              
+</div>
+ 
+{% endblock %}
+{% block footer %}
 
-    <a href="{{ path('app_image_gest_index') }}">back to list</a>
 {% endblock %}

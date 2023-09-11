@@ -27,17 +27,17 @@ body{
 
 /* AUTO COUNTER STYLE*/
 .autoCounter{
-    display: flex;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+  
     background-color: #753333;
     width: 300px;
     height: 150px;
     color:#FFFF;
     font-size:40px ;
-    justify-self: center;
-    text-align: center;
-    flex-direction: column;
-    padding-top: 10px;
-    flex-wrap: wrap;
+  
+   
 }
 
 .autoCounter h2{

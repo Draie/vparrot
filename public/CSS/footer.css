@@ -3,7 +3,8 @@ footer{
     grid-template-columns: 4fr 2fr;
     background-color: #858686;
     justify-content: center;
-    margin-top: 10rem;
+    padding: 0px;
+    margin: 0px;
 
 
 }
