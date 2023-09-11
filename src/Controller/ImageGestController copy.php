@@ -34,6 +34,25 @@ class ImageGestController extends AbstractController
         ]);
     }
 
+
+    #[Route('/auto', name: 'app_image_gest_auto', methods: ['GET', 'POST'])]
+    public function auto( HoraireRepository $horaire,ImageRepository $image): Response
+    {
+        return $this->render('image_gest/autoShow.html.twig', [
+            'image'=> $image->findAll(),
+            'horairedujour'=>$horaire->findAll()
+        ]);
+    }
+
+    #[Route('/{id}', name: 'app_image_gest_autoShow', methods: ['GET'])]
+    public function autoshow(Image $image, HoraireRepository $horaire): Response
+    {
+        return $this->render('image_gest/autoShow.html.twig', [
+            'image' => $image,
+            'horairedujour'=>$horaire->findAll()
+        ]);
+    }
+
     #[Route('/new', name: 'app_image_gest_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger, HoraireRepository $horaire): Response
     {
@@ -42,7 +61,8 @@ class ImageGestController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-           
+            $entityManager->persist($image);
+            $entityManager->flush();
 
             if ($form->isSubmitted() && $form->isValid()) {
                 /** @var UploadedFile $photoFile */
@@ -123,9 +143,6 @@ class ImageGestController extends AbstractController
                     $image->setPhoto3($newFilename3);
                 }
     
-
-                $entityManager->persist($image);
-                $entityManager->flush();
                 // ... persist the $product variable or any other work
             }    
             return $this->redirectToRoute('app_image_gest_index', [], Response::HTTP_SEE_OTHER);
@@ -138,26 +155,6 @@ class ImageGestController extends AbstractController
         ]);
     }
 
-   /* #[Route('/auto', name: 'app_image_gest_auto', methods: ['GET', 'POST'])]
-    public function auto( HoraireRepository $horaire,ImageRepository $image): Response
-    {
-        return $this->render('image_gest/autoShow.html.twig', [
-            'image'=> $image->findAll(),
-            'horairedujour'=>$horaire->findAll()
-        ]);
-    }
-    */
-
-    #[Route('/{id}', name: 'app_image_gest_autoShow', methods: ['GET'])]
-    public function autoshow(Image $image, HoraireRepository $horaire): Response
-    {
-        return $this->render('image_gest/autoShow.html.twig', [
-            'image' => $image,
-            'horairedujour'=>$horaire->findAll()
-        ]);
-    }
-
-  
     #[Route('/{id}', name: 'app_image_gest_show', methods: ['GET'])]
     public function show(Image $image, HoraireRepository $horaire): Response
     {

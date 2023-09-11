@@ -27,7 +27,7 @@
     <div class="detailBox">
             <h3 class="autoName"> Modèle : {{ image.nom }}</h3>
             <h3 class="price"> A partir de : {{ image.price }} €</h3>
-            <h4 class="kms">Kilométrage : {{ image.kms }} kms</h4>
+            <h4 class="kms">Kilométrage : {{ image.kms}} kms</h4>
             <h4 class="date">Date de mise en circulation  : {{ image.createdAt ? image.createdAt|date('Y') : '' }}</h4>
         </div>
         <div>
@@ -35,7 +35,7 @@
           </div>
                        <div "btn">
              <a href="{{ path('app_image_gest_auto') }}">Nous contacter</a>
-    </div>
+            </div>
 
        
 
