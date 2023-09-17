@@ -4,6 +4,10 @@
 {% block stylesheets %}
             <link href="{{ asset('css/Home.css') }}" rel="stylesheet" />
         {% endblock %}
+         {% block javascripts %}
+            <script src="{{ asset('js/index.js') }}"></script>
+           
+        {% endblock %}
 {% block body %}
 
 {% include 'navbar.html.twig' %}
@@ -18,7 +22,14 @@
      </div>
 
      <h1 class="Heading1"> nos vehicules d'occasions</h1>
+               <div class="filterPart">
+          <h2> Filtre </h2>
+          <button class="priceBtn">du plus chère au moins chère</button>
+               <button class="kmsBtn">Du kilometrage le plus bas au plus haut </button>
+          </div>
     <div class="mainContent">
+    
+
      {% include 'home/autoCard.html.twig' %}
      </div>
 

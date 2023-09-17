@@ -1,100 +1,159 @@
 
-
+/* GLOBALE STYLE */
 body{
     grid-template-rows: 10vh 90vh;
     height: max-content;
     width: 98vw;
+    padding: 0;
+    margin:0;
+    width: 98.8vw;
+    
+    
+}
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 50px;
+    margin-left: 50px;
+}
+.autoBody{
+    display:grid;
+    width: 90vw;
+    grid-template-columns: 2fr 2fr;
+    justify-items: center;
+    padding-left: 5vw;
+
+}
+
+/* AUTO CARD STYLE*/
+.autoCard{
+    display: flex;
+    background-color: #EFF0E4;
+    width: 400px;
+    height: 600px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+   
+    
+}
+.autoCard img {
+    width: 300px;
+    height: 329px;
+
+}
+
+
+.autoCard h3{
+    align-self: flex-start;
+    padding-left: 3.6vw;
+}
+
+ .btn a{
+    background-color: #F14413;
+    color: #FFF;
+    font-weight: bolder;
+    padding: 6px;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 10vw;
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+
     
 }
 
-.Heading1 h1{
-    font-family: 'Bebas Neue','sans-serif';
-    font-weight: lighter;
-    font-size: 40px;
-    padding-left: 20px;
-    margin:10px;
-    padding-top: 30px;
-}
-
-.autoBody{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width:95vw ;
-    height: max-content;
-}
-.autoCard{
-
-    width: 400px;
-    height: 80%;
-    background-color: #EFF0E4;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-    justify-self: center;
-    gap:2rem;
-    border-radius:10px;
-    padding-top:1.5rem;
-    padding-bottom:1.5rem;
-    box-shadow: 0px 2px 124px -17px rgba(0,0,0,0.07);
-    transition-duration: 1s;
-}
-
-
-
-
-.autoCard:hover{
-    box-shadow: 0px 2px 87px 15px rgba(179,179,179,0.45);
+.btn a:hover{
+    background-color: #c83810;
    
 }
+/*---------------------------------------------------------end card -------*/
 
-.autoName{
-    font-size: larger;
-    font-weight: 600;
+/*------------- DETAIL BOX ---------*/
+.detailBox{
+    
+    width: 750px;
+    font-family: 'Roboto', sans-serif;
+    gap:  4px;
+    justify-content: center;
+
+    
+}
+.detailBox h1 , h4{
+    font-weight: lighter;
+    
+}
+.detailBox h4 {
+    font-size: 25px;
+    margin-left: 50px;
+    width: max-content;
+    font-weight: bolder;
+
+}
+ .equipement h4{
+    font-size: 32px;
+    margin-left: 50px;
+    width: max-content;
+    overflow: hidden;
+}
+.detailBox h1{
+    font-size: 40px;
+    margin-left:2rem;
+    padding-top: 50px;
+}
+.detailContent{
+    margin: 50px;
+    background-color: #FFF;
+    height: 31rem;
+    box-shadow: -1px 17px 361px -6px rgba(82,73,73,0.03);
+}
+.detailBox h1 {
+    background-color: #FFF;
 }
 
-.autoCard .detailBox{
+
+/*--------- APERCCU IMG STYLE----------------------- */
+.imgAperçuContainer{
     display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    margin-left:3.3rem;
-    font-family: 'Roboto','sans-serif';
+    margin: 2rem;
     gap: 2rem;
+    margin-left: 4.9rem;
+
+}
+
+
+.imgAperçuContainer img {
+    width: 200px;
+    height: 195px;
+    border-width: 5px;
+    border-color: #FFF;
+    border-style: solid;
     
 }
-.price{
-    font-size: 20px;
-    font-weight: 900;
-    background-color: #F14413;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    border-radius: 10px;
-    
+
+.imgAperçuContainer img:hover{
+    border-width: 5px;
+    border-color: #F14413;
+    border-style: solid;
+    box-shadow: -1px 2px 148px -51px rgba(227,227,227,0.75);
 }
-.date{
-    font-size: smaller;
+.img-cover img{
+    width: 200px;
+    height: 200px;
 }
 
-.autoCard img{
 
-    max-width: 300px;
-    max-height: 290px;
-    
+/* CLOSE BUTTON STYLE */
 
+ svg{
+    position: absolute;
+    left: 87vw;
+    top:45vh;
+    opacity: 0.5;
+  
 }
 
-.btn a{
-
-    background-color: #F14413;
-    color: white;
-    text-decoration: none;
-    font-family: 'Roboto','sans-serif';
-    font-weight: 800 ;
-    align-self: center;
-    padding: 5px;
-    border-radius: 5px;
-    transition-duration: 0.7s;
-
+svg:hover{
+    opacity: 1;
 }

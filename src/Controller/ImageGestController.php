@@ -149,11 +149,12 @@ class ImageGestController extends AbstractController
     */
 
     #[Route('/{id}', name: 'app_image_gest_autoShow', methods: ['GET'])]
-    public function autoshow(Image $image, HoraireRepository $horaire): Response
+    public function autoshow(Image $image, HoraireRepository $horaire, ImageRepository $photo): Response
     {
         return $this->render('image_gest/autoShow.html.twig', [
             'image' => $image,
-            'horairedujour'=>$horaire->findAll()
+            'horairedujour'=>$horaire->findAll(),
+            'photo'=>$photo->findAll(),
         ]);
     }
 
@@ -211,7 +212,7 @@ class ImageGestController extends AbstractController
             if ($todelete ){
                 $path=$this->getParameter("photo_directory").'/'.$todelete;
     
-                // verfier que limage existe //
+                // verifier que limage existe //
                
                         unlink($path);
                 
