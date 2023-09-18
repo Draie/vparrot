@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link href="{{ asset('css/requestForm.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+{% block title %}Contacter le garage{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+
+    <div class="formContent">
+        <h1>Contacter le Garage </h1>
+    {{ include('auto_request/_form.html.twig') }}
+            <a class ="button"href="{{ path('app_home') }}">Retour</a><button>
+</div>
+
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

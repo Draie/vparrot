@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AutoRequest index{% endblock %}
+
+{% block body %}
+    <h1>AutoRequest index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>AutoName</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Mail</th>
+                <th>PhoneNumber</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auto_request in auto_requests %}
+            <tr>
+                <td>{{ auto_request.id }}</td>
+                <td>{{ auto_request.autoName }}</td>
+                <td>{{ auto_request.nom }}</td>
+                <td>{{ auto_request.prenom }}</td>
+                <td>{{ auto_request.mail }}</td>
+                <td>{{ auto_request.phoneNumber }}</td>
+                <td>{{ auto_request.status ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_auto_request_show', {'id': auto_request.id}) }}">show</a>
+                    <a href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_auto_request_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AutoRequest{% endblock %}
+
+{% block body %}
+    <h1>AutoRequest</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ auto_request.id }}</td>
+            </tr>
+            <tr>
+                <th>AutoName</th>
+                <td>{{ auto_request.autoName }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ auto_request.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ auto_request.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ auto_request.mail }}</td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td>{{ auto_request.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ auto_request.status ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_auto_request_index') }}">back to list</a>
+
+    <a href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">edit</a>
+
+    {{ include('auto_request/_delete_form.html.twig') }}
+{% endblock %}

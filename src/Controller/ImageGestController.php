@@ -3,12 +3,16 @@
 namespace App\Controller;
 
 use App\Entity\Image;
+
 use App\Form\ImageTypeEdit;
 use App\Form\ImageType;
 use App\Repository\ImageRepository;
 use App\Repository\HoraireRepository;
+use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -151,11 +155,13 @@ class ImageGestController extends AbstractController
     #[Route('/{id}', name: 'app_image_gest_autoShow', methods: ['GET'])]
     public function autoshow(Image $image, HoraireRepository $horaire, ImageRepository $photo): Response
     {
-        return $this->render('image_gest/autoShow.html.twig', [
-            'image' => $image,
-            'horairedujour'=>$horaire->findAll(),
-            'photo'=>$photo->findAll(),
-        ]);
+            
+            return $this->render('image_gest/autoShow.html.twig', [
+                'image' => $image,
+                'horairedujour'=>$horaire->findAll(),
+                'photo'=>$photo->findAll(),
+            ]);
+        
     }
 
   
