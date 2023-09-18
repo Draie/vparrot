@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -23,6 +24,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
+    #[ORM\Column]
+    private ?int $commentAdmin;
+
     /**
      * @var string The hashed password
      */
@@ -33,6 +37,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->id;
     }
+
+    public function getcommentAdmin(): ?bool
+    {
+        return $this->commentAdmin;
+    }
+    
+    public function setcommentAdmin(?bool $commentAdmin): self
+    {
+        $this->commentAdmin = $commentAdmin;
+    
+        return $this;
+    }
+
 
     public function getEmail(): ?string
     {
@@ -75,6 +92,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+
+  
+
     /**
      * @see PasswordAuthenticatedUserInterface
      */
@@ -89,6 +109,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+
 
     /**
      * @see UserInterface

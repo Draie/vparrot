@@ -1,0 +1,31 @@
+   
+       {% block stylesheets %}
+            <link href="{{ asset('css/horaireSet.css') }}" rel="stylesheet" />
+        {% endblock %}
+    <div class="horaireSettings">
+       
+              <div class="horaireSetting_header">
+                     <h2>Horaire</h2>
+
+                     <i class="fa-solid fa-gear"></i>
+              </div>
+             <div class="horaireCard">
+                                   
+                     {% for horaire in horaire %}
+
+
+                            <div class="heureContainer">
+                                   <h2>     {{ horaire.Jour }}</h2>
+                                   
+                                   <div>
+                                          <p class="heure">De {{ horaire.morningStartTime ? horaire.morningStartTime|date('H:i') : '' }} &nbsp; à &nbsp;</p>
+                                          <p class="heure"> {{ horaire.morningEndTime ? horaire.morningEndTime|date('H:i') : '' }} &nbsp; </p>
+                                          <p class="heure" > et de {{ horaire.afterStartTime ? horaire.afterStartTime|date('H:i') : '' }}</p>
+                                          <p class="heure"> &nbsp; à &nbsp; {{ horaire.afterEndTime ? horaire.afterEndTime|date('H:i') : '' }}</p>
+                                          </div>
+                            </div>
+                     {% endfor %}
+              </div>
+
+            
+       </div>

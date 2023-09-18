@@ -1,0 +1,13 @@
+.autoCounter{
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #753333;
+    color: #FFF;
+    max-height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 2rem;
+    font-weight: lighter;
+}

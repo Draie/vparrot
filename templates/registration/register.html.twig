@@ -1,19 +1,37 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Register{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/user.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+        <div class="adminSide_bar">
+                    {% include 'dashbord/adminSide_bar.html.twig' %} 
+        </div>
+   
+        <div class="mainContent">
+                    {{ form_errors(registrationForm) }}
 
-    {{ form_errors(registrationForm) }}
+                    {{ form_start(registrationForm) }}
+                    <div class="formContent">
+                            <h1>Ajouter des utilisateurs</h1>
+                                <div class="formDetails">
+                                        <div class="form">
+                                        {{ form_row(registrationForm.email) }}
+                                        {{ form_row(registrationForm.plainPassword, {
+                                            label: 'Password'
+                                        }) }}
+                                            <div class="checkbox">
+                                            {{ form_row(registrationForm.comment_admin) }}
+                                            </div>
+                                        </div>
+                                        
+                                
+                                </div>
+                                    <button type="submit" class="btnRegister">Ajouter un nouvelle utilisateurs</button>
+                                    {{ form_end(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {% block footer%}
+{% endblock %}
 {% endblock %}

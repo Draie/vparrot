@@ -2,8 +2,8 @@
 
 body{
     width: 98.89vw;
-    height: 99.5vw;
-  background-color: #F14413;
+
+
   
 }
 *{
@@ -14,7 +14,9 @@ body{
 .mainContent{
   background-color: white;
   display: flex;
+  flex-direction: column;
   gap: 2rem;
+  max-width: 98.89vw;
 
 }
 
@@ -80,8 +82,14 @@ body{
 
 /* //////////////////////////////////////////////// */
 
-.form button {
-  background-color: #F14413;
+
+.btnRegister{
+  height: 30px;
+  flex: end;
+ margin-left: 45vw;
+ padding-top: 10px;
+
+ background-color: #F14413;
     
   color: white;
   text-decoration: none;
@@ -94,33 +102,39 @@ body{
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 30px;
-
-}
-.btn a{
-  background-color: #F14413;
-    
-  color: white;
-  text-decoration: none;
-  font-family: 'Roboto','sans-serif';
-  font-weight: 800 ;
-  align-self: center;
-  padding: 5px;
-position: absolute;
-top:100px;
-right: 100px;
   transition-duration: 0.7s;
+ 
 }
 
-.btn a:hover{
-  
-  background-color: #992708f8;
-
+.btnRegister:hover{
+    background-color: #992708f8;
 }
 
-.form button:hover {
-  background-color: #992708f8;
+.checkbox div{
+    display: flex;
+   width: 100%;
+   justify-self: center;
+   align-items: center;
 }
 
-.btnRegister{
-  
+.checkbox div label{
+    min-width: max-content;
+    text-align: center;
 }
+
+
+/* USER LIST PART */
+/*.userList{
+    display: flex;
+    background-color: #F14413;
+    margin-top: 5rem;
+    flex-direction: column;
+    padding-left: 10vw;
+}
+
+.userCard{
+    display: flex;
+    gap: 5rem;
+}
+
+*/

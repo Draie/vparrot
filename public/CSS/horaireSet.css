@@ -1,0 +1,22 @@
+.horaireSettings{
+    background-color:#858686;
+    margin:0;
+    padding: 0;
+    width: 400px;
+    color: #FFF;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.heureContainer{
+    display: flex;
+}
+
+.horaireSetting_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RequestManagement index{% endblock %}
+
+{% block body %}
+    <h1>RequestManagement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Mail</th>
+                <th>PhoneNumber</th>
+                <th>RequestObject</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for request_management in request_managements %}
+            <tr>
+                <td>{{ request_management.id }}</td>
+                <td>{{ request_management.Nom }}</td>
+                <td>{{ request_management.Prenom }}</td>
+                <td>{{ request_management.mail }}</td>
+                <td>{{ request_management.phoneNumber }}</td>
+                <td>{{ request_management.RequestObject }}</td>
+                <td>{{ request_management.status }}</td>
+                <td>
+                    <a href="{{ path('app_request_management_show', {'id': request_management.id}) }}">show</a>
+                    <a href="{{ path('app_request_management_edit', {'id': request_management.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_request_management_new') }}">Create new</a>
+{% endblock %}

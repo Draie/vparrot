@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link href="{{ asset('css/requestForm.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Nous contacter {% endblock %}
+
+{% block body %}
+     {{ include('navbar.html.twig') }}
+
+    <div class="formContent">
+        <h1>Envoyez nous un message </h1>
+    {{ include('request_management/_form.html.twig') }}
+    </div>
+        <a class ="button"href="{{ path('app_service_index') }}">Retour au service</a>
+
+{% endblock %}

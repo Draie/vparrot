@@ -2,8 +2,6 @@
 
 body{
     width: 98.89vw;
-    height: 99.5vw;
-  background-color: #F14413;
   
 }
 *{
@@ -11,14 +9,20 @@ body{
   margin:0px;
 }
 
-.mainContent{
+.formContent{
   background-color: white;
   display: flex;
   gap: 2rem;
+  width: 98.9vw;
+  height: vh;
+flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  align-items: center;
 
 }
 
-.mainContent h1{  
+.formContent h1{  
    font-family: 'Bebas Neue', sans-serif;
   font-size: 48px;
   color: #020409;
@@ -29,40 +33,27 @@ body{
 /* //////////////////////////////////////////////////////*/
 
 /* FORM PART STYLE*/
-.formContent{
-    width: 98.9vw;
-    height: 100vh;
-
-    justify-content: center;
-
-    margin-top: 5rem;
-}
-.formContent .formDetails 
+.formContent div 
 {
   display: flex;
+  flex-direction: column;
+  max-width:80%;
 }
 
-.form{
-  margin-top: 2rem;
-  display: flex;
-  flex-direction:column;
-  margin-left: 40vw;
-  max-width: 450px;
 
-}
-.form label{
+.formContent label{
   font-size: larger;
   font-family: 'Roboto', sans-serif;
   font-weight: bolder;
 
 
 }
-.form div {
+.formContent div {
   flex: start;
   min-width: 300px;
   max-width: 350px;
 }
-.form input {
+.formContent input {
   border: 1px solid rgba(140,140,140,0.89);
   margin-left: 10px;
   height: 20px;
@@ -71,16 +62,14 @@ body{
   margin-bottom: 10px;
   padding-left: 5px;
   color: rgba(140,140,140,0.89);
+  
 
 }
 
-.formContent a{
-  margin-right: 2rem;
-}
 
 /* //////////////////////////////////////////////// */
 
-.form button {
+.formContent button {
   background-color: #F14413;
     
   color: white;
@@ -93,10 +82,10 @@ body{
   border:none;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 30px;
+  margin-top: 10vh;
 
 }
-.btn a{
+.formContent button{
   background-color: #F14413;
     
   color: white;
@@ -111,16 +100,30 @@ right: 100px;
   transition-duration: 0.7s;
 }
 
-.btn a:hover{
-  
-  background-color: #992708f8;
 
-}
-
-.form button:hover {
+.formContent button:hover {
   background-color: #992708f8;
 }
+.button{
 
-.btnRegister{
-  
+        background-color: #F14413;
+          
+        color: white;
+        text-decoration: none;
+        font-family: 'Roboto','sans-serif';
+        font-weight: 800 ;
+        align-self: center;
+        padding: 5px;
+        transition-duration: 0.7s;
+        border:none;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10vh;
+        position: absolute;
+        top:100px;
+        left: 100px;
 }
+
+.button:hover {
+    background-color: #992708f8;
+  }

@@ -39,20 +39,24 @@
    font-size: 15px;
  }
 
- .cardContainer .descriptionBox .btn {
+ .cardContainer .descriptionBox .btnServ {
    max-width: max-content;
    padding-left:15rem;
  }
 
- .cardContainer .descriptionBox .btn button{
+.btnServ a {
    margin-top:4rem;
    border:none;
    padding:10px;
    background-color: #858686;
    color:white;
+   text-decoration: none;
+   height: 30px;
+   width: 200px;
+
 
  }
- .cardContainer .descriptionBox .btn button:hover{
+ .btnServ a:hover{
    background-color: #FEFFFE;
    color:  #020409;
    font-weight: 200;
