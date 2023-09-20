@@ -1,13 +1,19 @@
 {% extends 'base.html.twig' %}
+ {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
 
-{% block title %}Edit AutoRequest{% endblock %}
+{% block title %}Modifier la demande{% endblock %}
 
 {% block body %}
-    <h1>Edit AutoRequest</h1>
+   
+    <div class="formContent">
+     <h1>Modifier la demande</h1>
 
-    {{ include('auto_request/_form.html.twig', {'button_label': 'Update'}) }}
+   <div =class"button2"> {{ include('auto_request/_form.html.twig', {'button_label': 'Update'}) }}</div>
 
-    <a href="{{ path('app_auto_request_index') }}">back to list</a>
+        <a  class="button"href="{{ path('app_auto_request_index') }}">Retour à la liste</a>
 
     {{ include('auto_request/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

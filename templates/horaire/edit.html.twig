@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
 
-{% block title %}Edit Horaire{% endblock %}
+{% block title %}Horaire Gestion{% endblock %}
 
 {% block body %}
-    <h1>Edit Horaire</h1>
-
+ 
+   <div class="formContent">
+      <h1>Modifier les horaires</h1>
     {{ include('horaire/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_horaire_index') }}">back to list</a>
+    <a  class="button"href="{{ path('app_horaire_index') }}">Retour à la liste</a>
 
     {{ include('horaire/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

@@ -21,11 +21,11 @@
             <tr class=" headerTable_tittle">
 
                 <th class="range">Jour</th>
-                <th class="range">MorningStartTime</th>
-                <th class="range"> MorningEndTime</th>
-                <th class="range">AfterStartTime</th>
-                <th class="range">AfterEndTime</th>
-                <th class="range">actions</th>
+                <th class="range">Heure d'ouvreture</th>
+                <th class="range"> Fermeture </th>
+                <th class="range">Heure de reprise</th>
+                <th class="range">Heure de fermeture</th>
+             
             </tr>
         </thead>
         <tbody>
@@ -33,10 +33,10 @@
             <tr>
            
                 <td class="range">{{ horaire.Jour }}</td>
-                <td class="range">{{ horaire.morningStartTime ? horaire.morningStartTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td class="range">{{ horaire.morningEndTime ? horaire.morningEndTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td class="range">{{ horaire.afterStartTime ? horaire.afterStartTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td class="range">{{ horaire.afterEndTime ? horaire.afterEndTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="range">{{ horaire.morningStartTime ? horaire.morningStartTime|date('H:i') : '' }}</td>
+                <td class="range">{{ horaire.morningEndTime ? horaire.morningEndTime|date('H:i') : '' }}</td>
+                <td class="range">{{ horaire.afterStartTime ? horaire.afterStartTime|date('H:i') : '' }}</td>
+                <td class="range">{{ horaire.afterEndTime ? horaire.afterEndTime|date('H:i') : '' }}</td>
                 <td class="btn">
                     <a href="{{ path('app_horaire_show', {'id': horaire.id}) }}">Voir en détail</a>
                     <a href="{{ path('app_horaire_edit', {'id': horaire.id}) }}">Modifier</a>

@@ -1,46 +1,47 @@
 {% extends 'base.html.twig' %}
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
 
-{% block title %}RequestManagement{% endblock %}
+{% block title %}Demande de service{% endblock %}
 
 {% block body %}
-    <h1>RequestManagement</h1>
+  
 
-    <table class="table">
+<div class="formContent">
+  <h1>Demande de :{{ request_management.Nom }} {{ request_management.Prenom }}</h1>
+    <table class="feedbackShow">
         <tbody>
+         
             <tr>
-                <th>Id</th>
-                <td>{{ request_management.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
+                <th class="rangeTitle">Nom</th>
                 <td>{{ request_management.Nom }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th class="rangeTitle">Prenom</th>
                 <td>{{ request_management.Prenom }}</td>
             </tr>
             <tr>
-                <th>Mail</th>
+                <th class="rangeTitle">Mail</th>
                 <td>{{ request_management.mail }}</td>
             </tr>
             <tr>
-                <th>PhoneNumber</th>
+                <th class="rangeTitle">Téléphone</th>
                 <td>{{ request_management.phoneNumber }}</td>
             </tr>
             <tr>
-                <th>RequestObject</th>
+                <th class="rangeTitle">Demande</th>
                 <td>{{ request_management.RequestObject }}</td>
             </tr>
-            <tr>
-                <th>Status</th>
-                <td>{{ request_management.status }}</td>
-            </tr>
+           
         </tbody>
     </table>
 
-    <a href="{{ path('app_request_management_index') }}">back to list</a>
+    <a class="button"href="{{ path('app_request_management_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_request_management_edit', {'id': request_management.id}) }}">edit</a>
+    <a class="button2"href="{{ path('app_request_management_edit', {'id': request_management.id}) }}">Modifier</a>
 
     {{ include('request_management/_delete_form.html.twig') }}
+
+    </div>
 {% endblock %}

@@ -1,46 +1,49 @@
 {% extends 'base.html.twig' %}
-
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
 {% block title %}AutoRequest{% endblock %}
 
 {% block body %}
-    <h1>AutoRequest</h1>
+  
+<div class="formContent">
 
-    <table class="table">
+       <h1>Demande de :{{ auto_request.nom }} {{ auto_request.prenom }}</h1>
+    <table class="feedbackShow">
         <tbody>
+           
             <tr>
-                <th>Id</th>
-                <td>{{ auto_request.id }}</td>
-            </tr>
-            <tr>
-                <th>AutoName</th>
+                <th class="rangeTitle">Annonce</th>
                 <td>{{ auto_request.autoName }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th class="rangeTitle">Nom</th>
                 <td>{{ auto_request.nom }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th class="rangeTitle">Prenom</th>
                 <td>{{ auto_request.prenom }}</td>
             </tr>
             <tr>
-                <th>Mail</th>
+                <th class="rangeTitle">E-mail</th>
                 <td>{{ auto_request.mail }}</td>
             </tr>
             <tr>
-                <th>PhoneNumber</th>
+                <th class="rangeTitle">Numéro de téléphone</th>
                 <td>{{ auto_request.phoneNumber }}</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th class="rangeTitle">Status</th>
                 <td>{{ auto_request.status ? 'Yes' : 'No' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_auto_request_index') }}">back to list</a>
+    <a class="button"href="{{ path('app_auto_request_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">edit</a>
+    <a class="button2"href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">Modifier</a>
 
     {{ include('auto_request/_delete_form.html.twig') }}
+{% endblock %}
+{% block footer %}
 {% endblock %}

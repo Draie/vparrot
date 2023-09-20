@@ -46,17 +46,17 @@ class HoraireController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_horaire_show', methods: ['GET'])]
-    public function show(Horaire $horaire): Response
+    public function show(Horaire $horaire, HoraireRepository $horaireRepository): Response
     {
         return $this->render('horaire/show.html.twig', [
             'horaire' => $horaire,
-            'horairedujour'=>$horaire->findAll()
+            'horairedujour'=>$horaireRepository->findAll()
 
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_horaire_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Horaire $horaire, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Horaire $horaire, EntityManagerInterface $entityManager, HoraireRepository $horaireRepository): Response
     {
         $form = $this->createForm(Horaire1Type::class, $horaire);
         $form->handleRequest($request);
@@ -70,7 +70,7 @@ class HoraireController extends AbstractController
         return $this->render('horaire/edit.html.twig', [
             'horaire' => $horaire,
             'form' => $form,
-            'horairedujour'=>$horaire->findAll()
+            'horairedujour'=>$horaireRepository->findAll()
         ]);
     }
 

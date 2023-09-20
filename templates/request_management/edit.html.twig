@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
 
-{% block title %}Edit RequestManagement{% endblock %}
+{% block title %}Modifier demande{% endblock %}
 
 {% block body %}
-    <h1>Edit RequestManagement</h1>
-
+    <div class="formContent">
+      <h1>Modifier le retour client</h1>
     {{ include('request_management/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_request_management_index') }}">back to list</a>
+    <a class="button"href="{{ path('app_request_management_index') }}">Retour à la liste </a>
 
     {{ include('request_management/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

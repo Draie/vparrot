@@ -58,7 +58,7 @@ class RequestManagementController extends AbstractController
     #[Route('/{id}/edit', name: 'app_request_management_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, RequestManagement $requestManagement, EntityManagerInterface $entityManager, HoraireRepository $horaire): Response
     {
-        $form = $this->createForm(RequestManagement1Type::class, $requestManagement);
+        $form = $this->createForm(RequestManagementType::class, $requestManagement);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

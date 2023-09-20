@@ -1,36 +1,45 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link href="{{ asset('css/feedback_index.css') }}" rel="stylesheet" />
+        {% endblock %}
 
-{% block title %}AutoRequest index{% endblock %}
+{% block title %}Demande Automobiles {% endblock %}
+
 
 {% block body %}
-    <h1>AutoRequest index</h1>
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-    <table class="table">
+        </div>
+           <div class="autoInfo_container">
+    <h1>Demande </h1>
+
+    <table class="autoInfo_table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>AutoName</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Mail</th>
-                <th>PhoneNumber</th>
-                <th>Status</th>
-                <th>actions</th>
+            <tr class="headerTable_tittle">
+         
+                <th class="range">Annonce</th>
+                <th class="range">Nom</th>
+                <th class="range">Prenom</th>
+                <th class="range">Mail</th>
+                <th class="range">Numéro de téléphone</th>
+              
+          
             </tr>
         </thead>
         <tbody>
         {% for auto_request in auto_requests %}
-            <tr>
-                <td>{{ auto_request.id }}</td>
-                <td>{{ auto_request.autoName }}</td>
-                <td>{{ auto_request.nom }}</td>
-                <td>{{ auto_request.prenom }}</td>
-                <td>{{ auto_request.mail }}</td>
-                <td>{{ auto_request.phoneNumber }}</td>
-                <td>{{ auto_request.status ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('app_auto_request_show', {'id': auto_request.id}) }}">show</a>
-                    <a href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">edit</a>
+            <tr class="column-range">
+             
+                <td class="range">{{ auto_request.autoName }}</td>
+                <td class="range">{{ auto_request.nom }}</td>
+                <td class="range">{{ auto_request.prenom }}</td>
+                <td class="range"> {{ auto_request.mail }}</td>
+                <td class="range">{{ auto_request.phoneNumber }}</td>
+        
+                <td class="btn">
+                    <a href="{{ path('app_auto_request_show', {'id': auto_request.id}) }}">Voir en détail</a>
+                    <a href="{{ path('app_auto_request_edit', {'id': auto_request.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -40,6 +49,8 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <a href="{{ path('app_auto_request_new') }}">Create new</a>
+{% endblock %}
+{% block footer %}
 {% endblock %}

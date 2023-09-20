@@ -1,36 +1,42 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+            <link href="{{ asset('css/feedback_index.css') }}" rel="stylesheet" />
+        {% endblock %}
 {% block title %}RequestManagement index{% endblock %}
 
 {% block body %}
-    <h1>RequestManagement index</h1>
+   <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-    <table class="table">
+        </div>
+   <div class="autoInfo_container">
+     <h1>Demande automobiles </h1>
+    <table class="autoInfo_table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Mail</th>
-                <th>PhoneNumber</th>
-                <th>RequestObject</th>
-                <th>Status</th>
-                <th>actions</th>
+            <tr class="headerTable_tittle">
+                
+                <th class="range">Nom</th>
+                <th class="range">Prenom</th>
+                <th class="range">Mail</th>
+                <th class="range">PhoneNumber</th>
+                <th class="range" >Sujet de la demande </th>
+  
+         
             </tr>
         </thead>
         <tbody>
         {% for request_management in request_managements %}
             <tr>
-                <td>{{ request_management.id }}</td>
-                <td>{{ request_management.Nom }}</td>
-                <td>{{ request_management.Prenom }}</td>
-                <td>{{ request_management.mail }}</td>
-                <td>{{ request_management.phoneNumber }}</td>
-                <td>{{ request_management.RequestObject }}</td>
-                <td>{{ request_management.status }}</td>
-                <td>
-                    <a href="{{ path('app_request_management_show', {'id': request_management.id}) }}">show</a>
-                    <a href="{{ path('app_request_management_edit', {'id': request_management.id}) }}">edit</a>
+              
+                <td class="range">{{ request_management.Nom }}</td>
+                <td class="range">{{ request_management.Prenom }}</td>
+                <td class="range">{{ request_management.mail }}</td>
+                <td class="range">{{ request_management.phoneNumber }}</td>
+                <td class="range">{{ request_management.RequestObject }}</td>
+              
+                <td class="btn">
+                    <a href="{{ path('app_request_management_show', {'id': request_management.id}) }}">Voir en détail</a>
+                    <a href="{{ path('app_request_management_edit', {'id': request_management.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -40,6 +46,8 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <a href="{{ path('app_request_management_new') }}">Create new</a>
+{% endblock %}
+{% block footer %}
 {% endblock %}
