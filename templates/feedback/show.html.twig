@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Feedback{% endblock %}
+
+{% block body %}
+
+<div class="formContent">
+    <h1>Feedback de :{{ feedback.pseudo }}</h1>
+
+    <table class="feedbackShow">
+        <tbody>
+      
+            <tr>
+                <th class="rangeTitle">Pseudo</th>
+                <td>{{ feedback.pseudo }}</td>
+            </tr>
+            <tr>
+                <th class="rangeTitle">Comment</th>
+                <td>{{ feedback.comment }}</td>
+            </tr>
+            <tr>
+                <th  class="rangeTitle">Note</th>
+                <td>{{ feedback.note }}</td>
+            </tr>
+            <tr>
+                <th  class="rangeTitle">Visible sur le site ?</th>
+                <td>{{ feedback.status ? 'Oui' : 'Non' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="button" href="{{ path('app_feedback_index') }}">Retour à la liste</a>
+
+    <a class="button2"href="{{ path('app_feedback_edit', {'id': feedback.id}) }}">Editer</a>
+
+    {{ include('feedback/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

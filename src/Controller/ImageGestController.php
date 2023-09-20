@@ -165,7 +165,7 @@ class ImageGestController extends AbstractController
     }
 
   
-    #[Route('/{id}', name: 'app_image_gest_show', methods: ['GET'])]
+    #[Route('show/{id}', name: 'adminshow', methods: ['GET'])]
     public function show(Image $image, HoraireRepository $horaire): Response
     {
         return $this->render('image_gest/show.html.twig', [

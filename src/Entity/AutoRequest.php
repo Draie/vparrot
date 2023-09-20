@@ -28,8 +28,8 @@ class AutoRequest
     #[ORM\Column(length: 255)]
     private ?string $phoneNumber = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?bool $status = null;
+    #[ORM\Column(nullable: false)]
+    private ?bool $status = false;
 
     public function getId(): ?int
     {

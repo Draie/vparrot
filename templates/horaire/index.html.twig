@@ -1,34 +1,45 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link href="{{ asset('css/horaire_index.css') }}" rel="stylesheet" />
+        {% endblock %}
 
 {% block title %}Horaire index{% endblock %}
 
 {% block body %}
-    <h1>Horaire index</h1>
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-    <table class="table">
+        </div>
+  
+   <div class="autoInfo_container">
+     <h1>Gestion des horaires</h1>
+     <div class="autoIndex_header">
+              <a class="btn"href="{{ path('app_horaire_new') }}">Ajouter </a>
+     </div>
+    <table class="autoInfo_table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Jour</th>
-                <th>MorningStartTime</th>
-                <th>MorningEndTime</th>
-                <th>AfterStartTime</th>
-                <th>AfterEndTime</th>
-                <th>actions</th>
+            <tr class=" headerTable_tittle">
+
+                <th class="range">Jour</th>
+                <th class="range">MorningStartTime</th>
+                <th class="range"> MorningEndTime</th>
+                <th class="range">AfterStartTime</th>
+                <th class="range">AfterEndTime</th>
+                <th class="range">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for horaire in horaires %}
             <tr>
-                <td>{{ horaire.id }}</td>
-                <td>{{ horaire.Jour }}</td>
-                <td>{{ horaire.morningStartTime ? horaire.morningStartTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ horaire.morningEndTime ? horaire.morningEndTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ horaire.afterStartTime ? horaire.afterStartTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ horaire.afterEndTime ? horaire.afterEndTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_horaire_show', {'id': horaire.id}) }}">show</a>
-                    <a href="{{ path('app_horaire_edit', {'id': horaire.id}) }}">edit</a>
+           
+                <td class="range">{{ horaire.Jour }}</td>
+                <td class="range">{{ horaire.morningStartTime ? horaire.morningStartTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="range">{{ horaire.morningEndTime ? horaire.morningEndTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="range">{{ horaire.afterStartTime ? horaire.afterStartTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="range">{{ horaire.afterEndTime ? horaire.afterEndTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="btn">
+                    <a href="{{ path('app_horaire_show', {'id': horaire.id}) }}">Voir en détail</a>
+                    <a href="{{ path('app_horaire_edit', {'id': horaire.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -38,6 +49,10 @@
         {% endfor %}
         </tbody>
     </table>
+ 
+    </div>
 
-    <a href="{{ path('app_horaire_new') }}">Create new</a>
+ 
+{% endblock %}
+{% block footer %}
 {% endblock %}

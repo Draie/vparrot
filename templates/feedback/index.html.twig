@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+            <link href="{{ asset('css/feedback_index.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Feedback Gestion{% endblock %}
+
+{% block body %}
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
+
+        </div>
+  
+   <div class="autoInfo_container">
+
+        
+          <h1>Avis  </h1>
+
+    <table class="autoInfo_table">
+        <thead>
+            <tr class="headerTable_tittle">
+                <th class="range">PSEUDO</th>
+                <th class="range">COMMENTAIRE</th>
+                <th class="range">NOTE</th>
+                <th class="range">STATUS </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for feedback in feedback %}
+            <tr class="column-range">
+                <td class="range">{{ feedback.pseudo }}</td>
+                <td class="range">{{ feedback.comment }}</td>
+                <td class="range">{{ feedback.note }}</td>
+                <td class="range">{{ feedback.status ? 'Yes' : 'No' }}</td>
+                <td class="btn">
+                    <a href="{{ path('app_feedback_show', {'id': feedback.id}) }}">Voir en détail</a>
+                    <a href="{{ path('app_feedback_edit', {'id': feedback.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

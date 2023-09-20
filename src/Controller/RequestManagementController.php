@@ -36,7 +36,7 @@ class RequestManagementController extends AbstractController
             $entityManager->flush();
             $this->addFlash('Succès', 'Votre demande à bien été envoyée');
 
-            return $this->redirectToRoute('app_request_management_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('request_management/new.html.twig', [

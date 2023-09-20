@@ -3,6 +3,7 @@
         {% endblock %}
 
 {% block navbar %}
+{{ app.session.get('user.commentAdmin') }}
  <div class="admin_side_bar">
 
  <a href="/admin">
@@ -21,13 +22,19 @@
  <a href="/horaire">
 <i class="fa-solid fa-clock" style="color: #ffffff;"></i>
 </a>
+ <a href="/service/new">
+<i class="fa-solid fa-screwdriver-wrench" style="color: #ffffff;"></i>
+</a>
+ 
 
 
- <a href="/">
+
+ <a href="/feedback">
+<i class="fa-solid fa-comment" style="color: #ffffff;"></i>
+</a>
+<a href="/">
 <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
 </a>
-
-
 
 </div>
 

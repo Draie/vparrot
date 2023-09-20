@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Laissez un avis {% endblock %}
+  {% block stylesheets %}
+            <link href="{{ asset('css/feedback.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+        {% block body %}
+        {% include 'navbar.html.twig' %}
+            <div class="formContent">
+                <h1>Laissez nous votre avis</h1>
+
+             {{ include('feedback/_form.html.twig') }}
+    
+               
+            </div>
+             <a class="button"href="{{ path('app_home') }}">Page d'accueil</a>
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}

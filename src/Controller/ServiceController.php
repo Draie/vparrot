@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Service;
 use App\Form\ServiceType;
-use App\Repository\ServiceRepository;
 use App\Repository\HoraireRepository;
+use App\Repository\ServiceRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,16 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class ServiceController extends AbstractController
 {
     #[Route('/', name: 'app_service_index', methods: ['GET'])]
-    public function index(ServiceRepository $serviceRepository, HoraireRepository $horaire): Response
+    public function index(ServiceRepository $serviceRepository): Response
     {
         return $this->render('service/index.html.twig', [
-            'service' => $serviceRepository->findAll(),
-            'horairedujour'=>$horaire->findAll()
+            'services' => $serviceRepository->findAll(),
         ]);
     }
 
     #[Route('/new', name: 'app_service_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager, HoraireRepository $horaire): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,HoraireRepository $horaire): Response
     {
         $service = new Service();
         $form = $this->createForm(ServiceType::class, $service);
@@ -41,21 +40,21 @@ class ServiceController extends AbstractController
         return $this->render('service/new.html.twig', [
             'service' => $service,
             'form' => $form,
-            'horairedujour'=>$horaire->findAll()
+            'horairedujour'=>$horaire->findAll(),
         ]);
     }
 
     #[Route('/{id}', name: 'app_service_show', methods: ['GET'])]
-    public function show(Service $service,HoraireRepository $horaire ): Response
+    public function show(Service $service, HoraireRepository $horaire): Response
     {
         return $this->render('service/show.html.twig', [
             'service' => $service,
-            'horairedujour'=>$horaire->findAll()
+            'horairedujour'=>$horaire->findAll(),
         ]);
     }
 
     #[Route('/{id}/edit', name: 'app_service_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Service $service, EntityManagerInterface $entityManager, HoraireRepository $horaire): Response
+    public function edit(Request $request, Service $service, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ServiceType::class, $service);
         $form->handleRequest($request);
@@ -69,7 +68,6 @@ class ServiceController extends AbstractController
         return $this->render('service/edit.html.twig', [
             'service' => $service,
             'form' => $form,
-            'horairedujour'=>$horaire->findAll()
         ]);
     }
 

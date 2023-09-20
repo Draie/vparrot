@@ -1,0 +1,67 @@
+
+/* GLOBALE STYLE */
+.feedCard{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    color: #858686;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    
+}
+
+.card{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    width: 250px;
+    height: 150px;
+    justify-self: center;
+    font-weight: bolder;
+    background-color: beige;
+    padding: 10px;
+
+}
+
+
+/*--------------------NOTE PART --------------------------*/
+.card .note{
+    font-size: 24px;
+    align-self: center;
+    color:rgb(16, 162, 67);
+
+    background-color: white;
+    border-radius: 10px;
+    max-width: max-content;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+/*----------------------------------------------------------*/
+
+
+
+
+/*USER PSEUDO STYLE PART*/
+.feedbackUser{
+    display: flex;
+    gap: 10px;
+    
+}
+.card .pseudo{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: lighter;
+    color: #858686;
+}
+/*-------------------------------------------*/
+
+/*-----------------FEED BACK USER COMMENT-------------*/
+.feedBackUserComment{
+    display: flex;
+    padding-top: 1rem;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.feedBackUserComment h5{
+    color: rgb(100, 100, 100);
+}

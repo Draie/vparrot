@@ -16,6 +16,10 @@ h1{
     font-size: 50px;
     margin-left: 50px;
 }
+
+.Heading2 h1{
+    margin-left: 120px;
+}
 .autoBody{
     display:grid;
     width: 90vw;
@@ -24,6 +28,8 @@ h1{
     padding-left: 5vw;
 
 }
+
+
 
 /* AUTO CARD STYLE*/
 .autoCard{

@@ -1,0 +1,128 @@
+/*GLOBALE SETTINGS */
+body{
+    display: grid;
+        grid-template-columns: 1fr 4fr;
+        font-family: 'Bebas Neue', 'sans-serif';
+}
+/*-------------------------------------------------*/
+
+
+/*AUTO GLOBALE CONTENT STYLE*/
+
+.autoIndex_content{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    
+}
+/*///////////////////////////////////////////////////*/
+
+/*AUTO CONTAINER HEADER PART STYLE*/
+.autoIndex_header{
+    display: flex;
+    justify-content: space-around;
+}
+/*-------------------------------------------------*/
+
+/* AUTO COUNTER STYLE*/
+.autoCounter{
+ 
+    display: flex;
+    background-color: #753333;
+    width: 300px;
+    height: 150px;
+    color:#FFFF;
+    font-size:40px ;
+
+    text-align: center;
+
+   
+}
+
+.autoCounter h2{
+    font-size: 32px;
+ }
+/*-------------------------------------------------*/
+
+/* BTN NEW AUTO STYLE */
+.autoIndex_header a {
+background-color: #F14413;
+color: white;
+font-weight: bolder;
+width: fit-content;
+height: fit-content;
+font-size: 12px;
+font-family: 'Roboto', sans-serif, monospace;
+text-align: center;
+text-decoration: none;
+padding-top: 8px;
+padding-left: 5px;
+padding-right: 5px;
+padding-bottom: 8px;
+position: absolute;
+top: 100px;
+left: 180px;
+
+}
+
+.autoIndex_header a:hover{
+    opacity: 0.9;
+}
+
+/* INFO AUTO CONATAINER STYLE PART */
+
+
+.autoInfo_container{
+    background-color: #858686;
+    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+    max-width: 62vw;
+
+    padding-left: 15px;
+    padding-bottom: 30px;
+    justify-content: space-around;
+    height: auto;
+}
+
+/* PARTICULAR AUTO INFO STYLE */
+.autoInfo_table .name_range{
+    width: 200px;
+    overflow: hidden;
+}
+
+.headerTable_tittle th{
+    padding-bottom: 10px;
+}
+
+.range{
+   padding-left:1vw;
+   text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #6a6c6c;
+    font-weight: bolder;
+}
+td{
+    width:9vw;
+}
+td a {
+    color :white ;
+    background-color: #6a6c6c;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    flex: end;
+   
+
+}
+
+/*BUTTON */
+.btn {
+    display: flex;
+    width: max-content;
+}
+
+.autoInfo_container{
+    margin-top: 5rem;
+}

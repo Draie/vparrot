@@ -36,7 +36,7 @@ class AutoRequestController extends AbstractController
             $entityManager->flush();
             $this->addFlash('Succès', 'Votre demande à bien été envoyée');
 
-            return $this->redirectToRoute('app_auto_request_new', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_auto', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('auto_request/new.html.twig', [

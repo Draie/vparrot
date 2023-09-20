@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un service{% endblock %}
+{% block stylesheets %}
+             <link href="{{ asset('css/auto_edit.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block body %}
+
+
+    <div class="formContent">
+        <h1>Ajouter un service</h1>
+    {{ include('service/_form.html.twig') }}
+    </div>
+
+    <a class="button"href="{{ path('app_dashbord') }}">Dashboard</a>
+    <a class="button"href="{{ path('app_service_delete') }}">Effacer</a>
+{% endblock %}

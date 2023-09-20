@@ -1,13 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Image{% endblock %}
-
+{% block title %}Modifier l'annonce{% endblock %}
+{% block stylesheets %}
+            <link href="{{ asset('css/auto_edit.css') }}" rel="stylesheet" />
+          
+        {% endblock %}
 {% block body %}
-    <h1>Edit Image</h1>
+     <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-    {{ include('image_gest/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+    <div class="formContent">
+        <h1>Modifier l'annonce</h1>
 
-    <a href="{{ path('app_image_gest_index') }}">back to list</a>
+            {{ include('image_gest/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
 
-    {{ include('image_gest/_delete_form.html.twig') }}
+    <a class="button"href="{{ path('app_image_gest_index') }}">Retour à la liste</a>
+
+    {{ include('image_gest/_delete_form.html.twig') }}</div>
 {% endblock %}

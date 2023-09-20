@@ -1,11 +1,23 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}New Service{% endblock %}
+{% block stylesheets %}
+             <link href="{{ asset('css/auto_edit.css') }}" rel="stylesheet" />
+        {% endblock %}
+{% block title %}Gestion des Services{% endblock %}
 
 {% block body %}
-    <h1>Create new Service</h1>
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
+        </div>
+
+<div class="formContent">
+    <h1>Ajouter un nouveaux Service</h1>
     {{ include('service/_form.html.twig') }}
+    </div>
 
-    <a href="{{ path('app_service_index') }}">back to list</a>
+    <a  class="button"href="{{ path('app_service_index') }}">Retour à liste </a>
 {% endblock %}
+{% block footer%}
+{% endblock %}
+
+

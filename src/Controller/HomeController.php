@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FeedbackRepository;
 use App\Repository\HoraireRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\ImageRepository;
@@ -12,13 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(ServiceRepository $repo, HoraireRepository $horaire,ImageRepository $photo): Response
+    public function index(ServiceRepository $repo, HoraireRepository $horaire,ImageRepository $photo, FeedbackRepository $feed): Response
     {
+        
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
             'service'=>$repo->findAll(),
             'horairedujour'=>$horaire->findAll(),
             'image'=> $photo->findAll(),
+            'feed'=>$feed->findAll(),
         ]);
     }
 
@@ -34,7 +36,7 @@ class HomeController extends AbstractController
 
 
 
-    #[Route('/test', name: 'app_auto')]
+    #[Route('/test', name: 'app_test')]
 public function test(ServiceRepository $repo, HoraireRepository $horaire,ImageRepository $photo ): Response
 {
     return $this->render('dashbord/adminSide_bar.html.twig', [

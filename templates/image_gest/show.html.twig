@@ -1,44 +1,91 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Véhicule d'occasion{% endblock %}
+
 {% block stylesheets %}
             <link href="{{ asset('css/vpage.css') }}" rel="stylesheet" />
+          
         {% endblock %}
 
 
 {% block body %}
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-
-
-    <div class="Heading1">
-    <h1>NOS VEHICULE D'OCASSIONS</h1>
-    </div>
-
-<div class="autoBody">
-    <div class="autoCard">
-
-        <div class="img-box">
-          <td><img class="img-thumbnail" src="{{ asset('uploads/photo/' ~ image.photo) }}" alt="voiture photo"></td>
         </div>
-    <div class="detailBox">
-            <h3 class="autoName"> Modèle : {{ image.nom }}</h3>
-            <h3 class="price"> A partir de : {{ image.price }} €</h3>
-            <h4 class="kms">Kilométrage : {{ image.kms }} kms</h4>
-            <h4 class="date">Date de mise en circulation  : {{ image.createdAt ? image.createdAt|date('Y') : '' }}</h4>
-        </div>
-        <div>
-         {% include 'image_gest/navlinks.html.twig' %}
-          {{ include('image_gest/_delete_form.html.twig') }}
-
-          </div>
-    
-    </div>
-    
-         
-               
-   </div>
-
-    
-
    
+
+
+    {# -----------HEADING PART : BUTTON EXIT , TITLE--------------------------#}
+        <div class="Heading1">
+            <h1>NOS VEHICULE D'OCASSIONS/{{ image.nom }}</h1>
+        </div>
+        <a href="{{ path('app_image_gest_index') }}">
+            <svg  xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
+        </a>
+
+    {# --------------------------------------------------------------------------#}
+
+
+    <div class="autoBody">
+    
+        <div class="autoCard">
+
+                {# -----------PRINCIPALE IMG BOX, NAME , PRICE--------------------------#}
+                <div class="img-box">
+                <td><img class="img-thumbnail" src="{{ asset('uploads/photo/' ~ image.photo) }}" alt="voiture photo"></td>
+                </div>
+
+                    <h3 class="autoName"> Modèle : {{ image.nom }}</h3>
+                    <h3 class="price"> A partir de : {{ image.price }} €</h3>
+                {# --------------------------------------------------------------------#}
+
+              
+        </div>{#END OF THE AUTO CARD #}
+            
+
+            
+                    {# -----------DETAILS PRODUCT PART --------------------------#}
+                    <div class="detailBox">
+                            <div class="detailContent">
+                                <h1> DETAIL DU VEHICULE</h1>
+                                <h4 class="kms">Kilométrage : {{ image.kms}} kms</h4>
+                                <h4 class="date">Date de mise en circulation  : {{ image.createdAt ? image.createdAt|date('Y') : '' }}</h4>
+                                <h4 class="equipement">Equipement : {{ image.equipement }}</h4>
+                                <h4 class="date">Carburant : {{ image.carburant}}</h4>
+                                <h4 class="date">Nombre de place  : {{ image.nbplaces}}</h4>
+                            </div>
+                        </div>
+                    {# ------------------------------------------------------------------------#}
+        {# -----------IMG APERCU PHOTO PART , ONCLICK WE CAN SEE THE OTHER PHOTO--------------------------#}
+                    <div class="imgAperçuContainer">
+                            {% if  image.photo2 == true  %}
+                            <div class="img-boxAperçu">
+                                    <td><img class="img-thumbnail" src="{{ asset('uploads/photo/' ~ image.photo2) }}" alt="voiture photo"></td>
+                            </div>
+                            {% endif %}
+
+                            {% if image.photo3 == true  %}
+                            <div class="img-boxAperçu">
+                                    <td><img class="img-thumbnail" src="{{ asset('uploads/photo/' ~ image.photo3) }}" alt="voiture photo"></td>
+                            </div>
+                            {% endif %}
+                    </div>
+                       {# -----------CONTACT BUTTON PART--------------------------#}
+                <div class="btn">
+               <a href="{{ path('app_image_gest_edit', {'id': image.id}) }}">Editer</a>
+                </div>
+                {# ---------------------------------------------------------#}
+                    {# ---------------------------------------------------------------#}
+        
+   
+        
+
+                
+    </div>{#END OF THE AUTO BODY #}
+
+
+
+{% endblock %}
+{% block footer %}
 {% endblock %}

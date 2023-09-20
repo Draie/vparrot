@@ -1,0 +1,153 @@
+/* GLOBALE STYELE*/
+
+body{
+    width: 98.89vw;
+  
+}
+*{
+    padding: 0px;
+  margin:0px;
+}
+
+.formContent{
+  background-color: white;
+  display: flex;
+  gap: 2rem;
+  width: 98.9vw;
+  height: vh;
+flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  align-items: center;
+
+}
+
+.formContent h1{  
+   font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #020409;
+  margin-left: 8rem;
+  font-weight: lighter;
+}
+
+/* //////////////////////////////////////////////////////*/
+
+/* FORM PART STYLE*/
+.formContent div 
+{
+  display: flex;
+  flex-direction: column;
+  max-width:80%;
+}
+
+
+.formContent label{
+  font-size: larger;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+
+
+}
+.formContent div {
+  flex: start;
+  min-width: 300px;
+  max-width: 350px;
+}
+.formContent input {
+  border: 1px solid rgba(140,140,140,0.89);
+  margin-left: 10px;
+  height: 20px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  color: rgba(140,140,140,0.89);
+  
+
+}
+
+
+/* //////////////////////////////////////////////// */
+
+.formContent button {
+  background-color: #F14413;
+    
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 800 ;
+  align-self: center;
+  padding: 5px;
+  transition-duration: 0.7s;
+  border:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10vh;
+
+}
+.formContent button{
+  background-color: #F14413;
+    
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 800 ;
+  align-self: center;
+  padding: 5px;
+position: absolute;
+top:100px;
+right: 100px;
+  transition-duration: 0.7s;
+}
+
+
+.formContent button:hover {
+  background-color: #992708f8;
+}
+.button{
+
+        background-color: #F14413;
+          
+        color: white;
+        text-decoration: none;
+        font-family: 'Roboto','sans-serif';
+        font-weight: 800 ;
+        align-self: center;
+        padding: 5px;
+        transition-duration: 0.7s;
+        border:none;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10vh;
+        position: absolute;
+        top:100px;
+        left: 100px;
+}
+.button2{
+
+  background-color: #F14413;
+    
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 800 ;
+  align-self: center;
+  padding: 5px;
+  transition-duration: 0.7s;
+  border:none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 15vh;
+  position: absolute;
+  top:70vh;
+  right: 100px;
+}
+
+
+.button:hover {
+    background-color: #992708f8;
+  }
+
+  .button2:hover {
+    background-color: #992708f8;
+  }

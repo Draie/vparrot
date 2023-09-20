@@ -1,18 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Service - V.Parrot{% endblock %}
+{% block title %}Service Gestion{% endblock %}
 {% block stylesheets %}
-            <link href="{{ asset('css/Home.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/service_index.css') }}" rel="stylesheet" />
+           
         {% endblock %}
 {% block body %}
+ <div class="adminSide_bar">
+            {% include 'dashbord/adminSide_bar.html.twig' %} 
 
-{% include 'navbar.html.twig' %}
+        </div>
 
-     <content>
-   <h1 class="Heading1"> nos services de réparation automobiles</h1>
-    <div class="mainContent">
-     {% include 'home/serviceCard.html.twig' %}
-     </div>
-     </content>
+     
+     <div class="autoInfo_container">
+               <div class="autoIndex_header">
+            
+                <a  href="{{ path('app_service_new') }}"> Ajouter un nouveaux service </a>
+            </div>
 
+    <table class="autoInfo_table">
+     <h1>Liste des services</h1>
+        <thead>
+            <tr class="headerTable_tittle">
+     
+                <th class="range">NOM</th>
+                <th class="range">DESCRIPTION</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+        
+                <td>{{ service.Title }}</td>
+                <td>{{ service.Description }}</td>
+                <td>
+                    <a href="{{ path('app_service_show', {'id': service.id}) }}">Voir en détails</a>
+                    <a href="{{ path('app_service_edit', {'id': service.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    </div>
+             
+     
+
+
+{% endblock %}
+{% block footer %}
 {% endblock %}

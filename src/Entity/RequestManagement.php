@@ -34,7 +34,7 @@ class RequestManagement
     private ?string $RequestObject = null;
 
     #[ORM\Column]
-    private ?int $status;
+    private ?bool $status= false;
 
     public function getId(): ?int
     {
