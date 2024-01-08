@@ -66,8 +66,8 @@
    width: 100%;
 }
 
-.serviceCard:hover{
-   background-color: #858686be;
+.serviceCard a:hover{
+   background-color: #85868692;
    cursor: pointer;
 
 }
