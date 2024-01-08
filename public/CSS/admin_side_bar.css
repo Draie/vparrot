@@ -1,25 +1,46 @@
 .admin_side_bar{
-    background-color: #F14413;
-    width: 80px;
+    background-color: #f14313;
+    width: 225px;
     height: 100%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
     justify-content: center;
     box-shadow: 2px 3px 19px -5px rgba(209,209,209,0.21);
     position: absolute;
     left: 0px;
     top: 0px;
+    font-family: 'Bebas Neue', 'sans-serif';
 }
 
 .admin_side_bar i{
-font-size: 30px;
+font-size: 23px;
 
+
+}
+.admin_side_bar p{
+    font-weight: lighter;
 }
 
 
 .admin_side_bar i:hover{
     text-shadow: 1px 3px 37px rgba(255,255,255,0.8);
+   
 }
 
+.admin_side_bar a:hover{
+    background-color: rgb(168, 50, 17);
+}
+.admin_side_bar a  {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    gap: 20px;
+    width: 92%;
+    padding-left: 15px;
+    
+   
+}

@@ -1,54 +1,61 @@
 footer{
+   
     display:grid;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 3fr 2fr 5fr;
     background-color: #858686;
     justify-content: center;
     padding: 0px;
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 
 
 }
+
 
 .footerCrud{
-  
-    color: aliceblue;
+    margin-top: 15px;
+    display: flex;
     flex-direction: column;
-    font-family: 'Roboto', 'sans-serif';
-    padding: 3rem;
-    text-align: center;
-    max-width: 557.15px;
-   
-}
+    margin-left: 15px;
+    gap: 1rem;
 
-.footerCrud h1{
-    padding-bottom: 1rem;
+
 }
 
 .heureContainer{
-    padding-top: 1rem;
     display: flex;
-    justify-content: center;
-   
+    flex-direction: center;
+    width: 100%;
+  
+}
+.bannerFooter{
+    display: flex;
+    height: 100%;
+
 }
 
 .links{
-    padding: 3rem;
-    text-align: center;
-    color: white;
-    font-family: 'Roboto', 'sans-serif';
-  
+    margin-top: 15px;
+    width: 100%;
+    margin-left:8rem;
 }
 .linkContainer{
+    
     display: flex;
-    justify-content: flex-start;
-    text-align: start;
     flex-direction: column;
-  
+    gap: 2rem;
+    margin-top: 10px;
+    
 }
 
-.linkContainer a {
+.links a {
     text-decoration: none;
     color: white;
-    padding-top: 1rem;
+    font-size: 22px;
+    z-index: 2;
 
+    
 }
+
+

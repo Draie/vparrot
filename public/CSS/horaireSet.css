@@ -20,3 +20,10 @@
     justify-content: center;
 
 }
+
+.autoIndex_header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+

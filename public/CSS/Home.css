@@ -34,20 +34,43 @@ body{
     padding-top: 30px;
 }
 
-.herobanner{
+.herobanner img{
  
-    text-align: center;
-    color:#858686;
-    margin: 50px;
+
+width: 100%;
+}
+
+.herobanner{
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
 }
 
-.herobanner h1{
-    font-family: 'Bebas Neue', 'Roboto';
-    font-size: 48px;
-    font-weight: 200;
-    margin: 50px;
+.aboutUs_content img{
+
+
+    width: 100%;
+    height: 200px;
+}
+.aboutUs{
+    background-color: beige;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
 }
 
+
+.btn_aboutUs button{
+
+    background-color: #F14413;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left:20px ;
+    padding-right:20px ;
+    border:none;
+    margin-left: 42vw;
+    font-size: 25px;
+    cursor: pointer;
+
+    
+}

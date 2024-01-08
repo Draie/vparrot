@@ -1,15 +1,4 @@
-/* GLOBALE STYELE*/
 
-body{
-    width: 98.89vw;
-
-
-  
-}
-*{
-    padding: 0px;
-  margin:0px;
-}
 
 .mainContent{
   background-color: white;
@@ -17,6 +6,7 @@ body{
   flex-direction: column;
   gap: 2rem;
   max-width: 98.89vw;
+  align-items: center;
 
 }
 
@@ -24,7 +14,7 @@ body{
    font-family: 'Bebas Neue', sans-serif;
   font-size: 48px;
   color: #020409;
-  margin-left: 8rem;
+  margin-left: 15rem;
   font-weight: lighter;
 }
 

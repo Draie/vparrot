@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
             <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" />
+               <link href="{{ asset('css/counter.css') }}" rel="stylesheet" />
         {% endblock %}
 
 {% block title %}Dashboard{% endblock %}
@@ -8,9 +9,41 @@
 
 {% block body %}
 {% include 'dashbord/adminSide_bar.html.twig' %} 
-    
+          <h1 class="Heading1"> Tableau de Bord</h1>
     <div class="boardContent">
-     
+   
+
+    <div class="autoIndex_content">
+<!-- HEADER COUNTER AND BUTTON CREATE NEW AUTO PART -->
+               <div class="autoIndex_header">
+               
+                  
+                  <div class="autoCounter">
+                     <div class"count">
+                     {{ count }}
+                     </div>  
+                     <h2>Vehicule en vente</h2>
+                  </div>
+               
+
+                <div class="serviceCount">
+                 
+                  <h2> Service en ligne </h2>  
+
+                  <div class="serviceList">
+                  {% for service in service %}
+
+                  <div class="serviceCard">
+                    <h1> {{ service.title}} </h1>
+                    <a href="{{ path('app_service_edit', {'id': service.id}) }}">Modifier</a>
+                    </div>
+                  {% endfor %}
+                  </div>
+               </div>
+               </div>
+
+               <!-- SERVICE ONLINE  -->
+              
    </div>
 
 {% endblock %}

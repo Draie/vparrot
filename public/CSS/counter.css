@@ -1,13 +1,17 @@
 .autoCounter{
-    font-family: 'Bebas Neue', sans-serif;
-    background-color: #753333;
-    color: #FFF;
-    max-height: 150px;
-    width: 200px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
-    margin: 2rem;
-    font-weight: lighter;
+    font-family: 'Bebas Neue', sans-serif;
+    max-width:400px ;
+    height:180px ;
+    background-color: #858686;
+    opacity: 58%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 5px 5px 15px 5px rgba(83, 77, 77, 0.226);
+
 }
+
+

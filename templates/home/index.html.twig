@@ -13,7 +13,8 @@
 {% include 'navbar.html.twig' %}
 
      <div class="herobanner">
-          <h1>  la qualité automobile à votre service !</h1>
+          <img src="{{ asset('IMG/HEROBANNER.png') }}" alt="Logo">
+
      </div>
      <content>
    <h1 class="Heading1"> nos services de réparation automobiles</h1>
@@ -41,6 +42,23 @@
          
      {% include 'home/feedbackContainer.html.twig' %}
      </div>
+
+     
+     <div class="aboutUs">
+     <h1 class="Heading1"> A propos de nous ...</h1>
+          <div class="aboutUs_content">
+               
+                    <img src="{{ asset('IMG/aboutUscontent1.svg') }}" alt="Logo">
+                     <img src="{{ asset('IMG/aboutUscontent2.svg') }}" alt="Logo">
+
+                      <div class="btn_aboutUs">
+                            <button href="{{ path('app_request_management_new')}} ">Nous contacter</button>
+                            </div>
+                          
+          </div>
+
+     </div>
+
 
      </content>
 

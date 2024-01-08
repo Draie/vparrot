@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/service')]
 class ServiceController extends AbstractController
 {
-    #[Route('/', name: 'app_service_index', methods: ['GET'])]
+    #[Route('/ondemande', name: 'app_service_index', methods: ['GET'])]
     public function index(ServiceRepository $serviceRepository): Response
     {
         return $this->render('service/index.html.twig', [
