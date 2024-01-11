@@ -2,10 +2,11 @@
 .boardContent{
    display: flex;
    flex-direction: column;
-   margin-left: 300px;
+   margin-left: 30rem;
    justify-self: center;
    align-self: center;
    width: 60vw;
+   height: max-content;
    justify-content: space-evenly;
   
 }
